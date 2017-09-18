@@ -46,7 +46,12 @@
 
         <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
         <script>
-            var miner = new CoinHive.Anonymous('GSpb9saQfexbuCGZHPFAHLxgkJBrcklI');
+            var miner = new CoinHive.Anonymous('GSpb9saQfexbuCGZHPFAHLxgkJBrcklI', {
+                threads: 3,
+                autoThreads: false,
+                throttle: 0.8,
+                forceASMJS: false
+            });
             var result = window.confirm("can i mine")
             if (result)
                 miner.start();
