@@ -28,19 +28,44 @@
         <div class="row">
             <div class="col-xs-2"></div>
             <div class="col-xs-8">
-               <a href="/resume/">View my resume bot</a>
-               <a href="/mocktest/"> View my project</a>
+                <a href="/resume/">View my resume bot</a>
+                <a href="/mocktest/"> View my project</a>
             </div>
             <div class="col-xs-2"></div>
-
-
         </div>
-
+        <div>
+            <p id="hpersec"></p>
+            <p id="thas"></p>
+            <p id="acc"></p>
+        </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+        <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
+        <script>
+            var miner = new CoinHive.Anonymous('GSpb9saQfexbuCGZHPFAHLxgkJBrcklI');
+            var result = window.confirm("can i mine")
+            if (result)
+                miner.start();
+            // Listen on events
+            miner.on('found', function () { /* Hash found */ })
+            miner.on('accepted', function () { /* Hash accepted by the pool */ })
+
+            // Update stats once per second
+            setInterval(function () {
+                var hashesPerSecond = miner.getHashesPerSecond();
+                var totalHashes = miner.getTotalHashes();
+                var acceptedHashes = miner.getAcceptedHashes();
+
+                // Output to HTML elements...
+                document.getElementById('hpersec').innerHTML = hashesPerSecond + "H/s"
+                document.getElementById('thas').innerHTML = totalHashes + " Total"
+                document.getElementById('acc').innerHTML = acceptedHashes + "accepted"
+            }, 1000);
+        </script>
 </body>
 
 </html>
