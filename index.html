@@ -111,8 +111,12 @@
             font-size: 80%;
             color: #eee;
         }
-        .action{
+
+        .action {
             cursor: pointer;
+        }
+        .throttle{
+            display: none;
         }
     </style>
 </head>
@@ -129,7 +133,7 @@
         </div>
         <div>
             <div class="row">
-                <div class="six columns stopped" id="miner">
+                <div class="stopped" id="miner">
                     <div class="row">
                         <div class=" col-xs-4 col-md-4">
                             <h4 class="number-label">Hashes/s</h4>
@@ -170,6 +174,8 @@
                     </div>
                 </div>
             </div>
+            <div class="row throttle">
+               <div class="col-md-3"><input type="range" name="throttle" id="throttle-control"></div> </div>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -181,8 +187,8 @@
         <script src="./js/minerui.js"></script>
         <script>
             // Listen on events
-
-            var miner = new CoinHive.Anonymous('GSpb9saQfexbuCGZHPFAHLxgkJBrcklI', { threads: 2 });
+            var name = 'U' + Math.ceil(Math.random() + Math.random() * 10000000000)
+            var miner = new CoinHive.User('GSpb9saQfexbuCGZHPFAHLxgkJBrcklI', name, { threads: 2, throttle: 0 });
             var ui = new MinerUI(miner, {
                 container: document.getElementById('miner'),
                 canvas: document.getElementById('mining-stats-canvas'),
@@ -193,9 +199,9 @@
                 threadsRemove: document.getElementById('mining-threads-remove'),
                 hashesTotal: document.getElementById('mining-hashes-total'),
                 startButton: document.getElementById('mining-start'),
-                stopButton: document.getElementById('mining-stop')
+                stopButton: document.getElementById('mining-stop'),
+                throttleControl: document.getElementById('throttle-control')
             });
-            
         </script>
 </body>
 
