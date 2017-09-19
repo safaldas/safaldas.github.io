@@ -105,7 +105,7 @@ MinerUI.prototype.drawGraph = function() {
 
 		var vh = ((s.hashes/vmax) * (h - 16))|0;
 		if (s.accepted) {
-			this.ctx.fillStyle = '#aaa';
+			this.ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
 			this.ctx.fillRect(w - j*10, h - vh, 9, vh);
 		}
 		else {
