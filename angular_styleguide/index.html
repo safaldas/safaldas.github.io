@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Style Guide</title>
+    <meta name="description" content="2D navigation demo" />
+    <meta name="author" content="Henrik Ingo" />
+    <link href="css/presentation.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        Useless Piece Of Shit
+    </div>
+
+    <div id="impress" data-transition-duration="1000">
+
+        <div class="step title" data-scale="2" data-x="-500" data-y="-500">
+            <img src="./images/angular_icon.png" alt="">
+            <h1>Coding in Style</h1>
+
+        </div>
+
+        <div id="whyangular" class="step" data-rel-x="1500" data-rel-y="1500" data-scale="1">
+            <h1>Why Angular</h1>
+
+            <ul>
+                <li>Just another JS framework
+                    <ul>
+                        <li>Modularity</li>
+                        <li>Observables</li>
+                        <li>Routing</li>
+                        <li>HttpClient Module</li>
+                        <li>Shadow DOM</li>
+                        <li>Templating</li>
+                        <li>Change Detection</li>
+                        <li>Typescript</li>
+                        <li>PWA</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="whatisstyle" class="step" data-x="1000" data-y="1000" data-z="0" data-rotate-y="90" data-rotate-z="0">
+            <h1>What is Coding Style </h1>
+            <ul>
+                <li>
+                    <ul>
+
+                        <li> How and when to use comments,</li>
+                        <li> Tabs or spaces for indentation (and how many spaces),</li>
+                        <li> Appropriate use of white space,</li>
+                        <li> Proper naming of variables and functions,</li>
+                        <li> Code grouping and organization</li>
+                        <li> File Structure</li>
+                        <li> Patterns to be used,</li>
+                        <li> Patterns to be avoided.</li>
+
+                    </ul>
+                </li>
+            </ul>
+            <img class="dirtycode" src="./images/dirtcode.jpg" alt="">
+        </div>
+        <div id="whystyleguide" class="step" data-x="2000" data-y="2000" data-z="0" data-rotate-y="90" data-rotate-z="0">
+            <h1>Contents</h1>
+            <ul>
+                <ul>
+                    <li>Single responsiblity</li>
+                    <li>Naming</li>
+                    <li>Coding Conventions</li>
+                    <li>Structutre and NgModules</li>
+                    <li>Components</li>
+                    <li>Directives</li>
+                    <li>Services</li>
+                    <li>Data Services</li>
+                    <li>Lifecycle Hooks</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Ice cream slides (3) -->
+        <div id="singleresponsiblity" class="step" data-x="2000" data-y="3000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="whystyleguide ruleofone whystyleguide naming">
+            <h1>Single Responsiblity</h1>
+
+            <ul>
+                <li>Rule Of One</li>
+                <li>Small Functions</li>
+            </ul>
+        </div>
+
+        <div id="ruleofone" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="singleresponsiblity rouleofone-why codingconvention namingconvention">
+            <h1>Rule of One</h1>
+
+            <ul>
+                <li>Do define one thing, such as a service or component, per file.</li>
+                <li>Consider limiting files to 400 lines of code.</li>
+                <li>Who cares</li>
+            </ul>
+        </div>
+
+
+        <div id="rouleofone-why" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="ruleofone smallfunctions codingconvention-pro selectornaming">
+            <h1>Why 101</h1>
+            <div class="highlight-point">
+                <h4>Reusable, &nbsp;</h4>
+                <h4>Easy to read, &nbsp;</h4>
+                <h4>Less mistakes</h4>
+            </div>
+            <p>One component per file -</p>
+            <ul>
+                <li> Easier to read, maintain, and avoid collisions with teams in source control.</li>
+                <li> Avoids hidden bugs when combining components - share variables, create unwanted closures, coupling with dependencies.</li>
+                <li> default export for its file - lazy loading with the router.</li>
+            </ul>
+        </div>
+
+        <div id="smallfunctions" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="singleresponsiblity smallfunctions-why codingconvention namingconvention">
+            <h1>Small Functions()</h1>
+
+            <ul>
+                <li>Do define small functions</li>
+                <li>Consider limiting files to 70 lines</li>
+                <li>Not possible</li>
+            </ul>
+        </div>
+
+
+        <div id="smallfunctions-why" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="smallfunctions naming codingconvention-pro selectornaming">
+            <h1>Why
+                <small>small()</small>
+            </h1>
+            <div class="highlight-point">
+                <h4>Reuse &nbsp;</h4>
+                <h4>Read &nbsp;</h4>
+                <h4>Maintain &nbsp;</h4>
+            </div>
+            <p>Small functions() -</p>
+            <ul>
+                <li> easier to test, when they do one thing and serve one purpose</li>
+                <li> Avoids hidden bugs that come with large functions - share variables, create unwanted closures, coupling with
+                    dependencies.
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Naming slides (3) -->
+        <div id="naming" class="step" data-x="3500" data-y="3000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight" data-goto-next-list="rouleofone-why namingconvention singleresponsiblity codingconvention">
+            <h1>Naming</h1>
+            <code>feature.type.ts</code>
+            <ul>
+                <li>Use dots and dashes</li>
+                <li>quickly identify what is in the file</li>
+                <li>pattern matching for any automated tasks</li>
+                <li>search</li>
+            </ul>
+        </div>
+
+        <div id="namingconvention" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="naming selectornaming ruleofone codingconvention-pro">
+            <img src="./images/naming.png" alt="">
+        </div>
+
+
+        <div id="selectornaming" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="namingconvention directivenaming rouleofone-why codingconvention-con">
+            <h1>Custom prefix for components</h1>
+            <img src="./images/selector-naming.png" alt="">
+        </div>
+        <div id="directivenaming" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="selectornaming codingconvention rouleofone-why codingconvention-con">
+            <h1>Custom prefix for directives</h1>
+            <img src="./images/directive-naming.png" alt="">
+        </div>
+
+        <!-- Coding convention slides (3) -->
+        <div id="codingconvention" class="step" data-x="5000" data-y="3000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="selectornaming codingconvention-pro naming appstructure">
+            <h1>Coding convention</h1>
+
+            <ul>
+                <li>Classes</li>
+                <li>Constants</li>
+                <li>Interfaces</li>
+                <li>Properties and Methods</li>
+                <li>Import line spacing</li>
+            </ul>
+        </div>
+
+        <div id="codingconvention-pro" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="codingconvention codingconvention-con namingconvention rouleofone-why">
+
+            <ul>
+                <li>UpperCamelCase for class names</li>
+                <li>lowerCamelCase for const</li>
+                <li> UpperCamelCase for interfaces (I)</li>
+                <li>lowerCamelCase for property and methods(_)</li>
+                <li> separate your stuff from their stuff.</li>
+            </ul>
+        </div>
+
+
+        <div id="codingconvention-con" class="step" data-rel-x="0" data-rel-y="1000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="codingconvention-pro appstructure selectornaming appstructure">
+            <img src="./images/separate-imports.png" alt="">
+        </div>
+        <!-- app structure slides (3) -->
+        <div id="appstructure" class="step" data-x="6000" data-y="3000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="selectornaming appfolderstructure codingconvention appfolderstructure">
+            <h1>Application structure and NgModules</h1>
+
+            <ul>
+                <li>Locate</li>
+                <li>Identify</li>
+                <li>Interfaces</li>
+                <li>Flat</li>
+                <li>T-DRY</li>
+            </ul>
+        </div>
+        <div id="appfolderstructure" class="step" data-x="7000" data-y="3000" data-goto-key-list="ArrowUp ArrowDown ArrowLeft ArrowRight"
+            data-goto-next-list="appstructure    conclusion appstructure conclusion">
+            <div id="tree">
+                <ul>
+                    <li class="root">
+                        src
+                    </li>
+                    <li>
+                        app
+                        <ul>
+                            <li>
+                                core
+                                <ul>
+                                    <li>core.module.ts </li>
+                                    <li>
+                                        spinner
+                                        <ul>
+                                            <li>spinner.component.ts|html|css|spec.ts </li>
+                                            <li>spinner.service.ts|spec.ts </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <li>
+                                    Shared
+                                    <ul>
+                                        <li>shared.module.ts </li>
+                                        <li>pipes
+                                            <ul>
+                                                <li>init-caps.pipe.ts|spec.ts </li>
+                                            </ul>
+                                        </li>
+                                        <li>components
+                                            <ul>
+                                                <li>text-filter.component.ts|spec.ts </li>
+                                            </ul>
+                                        </li>
+                                        <li>services
+                                            <ul>
+                                                <li>text-filter.service.ts|spec.ts </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" checked/> hero
+                                    <ul>
+                                        <li>hero.module.ts </li>
+                                        <li>store
+                                            <ul>
+                                                <li>index.ts</li>
+                                                <li>reducers
+                                                    <ul>
+                                                        <li>index.ts </li>
+                                                    </ul>
+                                                </li>
+                                                <li>effects
+                                                    <ul>
+                                                        <li>index.ts </li>
+                                                    </ul>
+                                                </li>
+                                                <li>selectors
+                                                    <ul>
+                                                        <li>index.ts </li>
+                                                    </ul>
+                                                </li>
+                                                <li>actions
+                                                    <ul>
+                                                        <li>index.ts </li>
+                                                    </ul>
+                                                </li>
+                                                <li>models
+                                                    <ul>
+                                                        <li>index.ts </li>
+                                                    </ul>
+                                                </li>
+                                                <li>services
+                                                    <ul>
+                                                        <li>index.ts </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>components
+                                            <ul>
+                                                <li>hero-detail.html|css|ts|spec.ts </li>
+                                            </ul>
+                                        </li>
+                                        <li>containers
+                                            <ul>
+                                                <li>hero-list.html|css|ts|spec.ts </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                        </ul>
+                        <li>app.component.ts|html|css|spec.ts </li>
+                        <li>app.module.ts </li>
+                        <li>app-routing.module.ts </li>
+                    </li>
+
+                    <li>main.ts</li>
+                    <li>index.html</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="conclusion" class="step" data-rel-x="1000" data-rel-y="1000">
+            <h1>kaboom</h1>
+        </div>
+
+        <div id="overview" class="step" data-x="4000" data-y="2000" data-scale="9" style="pointer-events: none;">
+        </div>
+    </div>
+
+    <div id="impress-toolbar"></div>
+
+    <div class="impress-progressbar">
+        <div></div>
+    </div>
+    <div class="impress-progress"></div>
+
+    <!-- <div id="impress-help"></div> -->
+
+    <script type="text/javascript" src="./js/impress.js"></script>
+    <script>impress().init();</script>
+
+</body>
+
+</html>
